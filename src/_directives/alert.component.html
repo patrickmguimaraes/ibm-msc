@@ -1,0 +1,22 @@
+﻿<!-- antigo
+<div *ngIf="message" [ngClass]="{ 'alert': message, 'alert-success': message.type === 'success', 'alert-danger': message.type === 'error' }">{{message.text}}</div>
+-->
+
+<div class="modal-header">
+    <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black g-mr-10 mb-0">{{title}}</h3>
+    <button type="button" class="close" aria-label="Close" (click)="dismiss()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    {{message}}
+</div>
+<div class="modal-footer">
+        <div class="d-flex align-self-center">
+            <button class="btn u-btn-primary" (click)="accept()">{{ btnOkText }}</button>
+        </div>
+
+        <div class="media-body align-self-center text-right">
+            <button type="button" (click)="decline()" class="btn u-btn-secondary">{{ btnCancelText }}</button>
+        </div>
+</div>

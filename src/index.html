@@ -1,13 +1,58 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <title>IbmMsc</title>
+  <title>IBM - Marketing Service Center</title>
   <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Patrick Mendes Guimarães">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="./assets/css/loading.css" rel="stylesheet" />
+  <link href="./assets/css/main.css" rel="stylesheet" />
+  <link href="./assets/css/app.css" rel="stylesheet" />
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/sticky-footer/">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="./assets/css/noty-animate.css">
+  <link rel="stylesheet" href="./assets/css/noty.css">
+  <meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#563d7c">
 </head>
+
 <body>
-  <app-root></app-root>
-</body>
+
+  <body class="d-flex flex-column h-100">
+    <!-- Begin page content -->
+    <main role="main" class="flex-shrink-0">
+      <app-root>
+        <div class="loading">Loading&#8230;</div>
+      </app-root>
+    </main>
+
+    <!-- Watson Scripts -->
+    <script src="./assets/js/watson/common.js"></script>
+    <script src="./assets/js/watson/api.js"></script>
+    <script src="./assets/js/watson/conversation.js"></script>
+    <script src="./assets/js/watson/payload.js"></script>
+    <script src="./assets/js/watson/global.js"></script>
+    <script type="text/javascript"
+      src="https://cdn.rawgit.com/watson-developer-cloud/watson-developer-cloud.github.io/master/analytics.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"></script>
+    <script src="./assets/js/noty.js"></script>
+    <script>
+
+    </script>
+  </body>
+
 </html>

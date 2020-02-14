@@ -1,0 +1,40 @@
+<form class="form" (ngSubmit)="create()" [@fadeInOnEnter] [@fadeOutOnLeave]>
+    <div class="text-center mb-4">
+        <h1 class="h3 mb-3 font-weight-normal">New User</h1>
+    </div>
+
+    <div class="form-label-group">
+        <input type="name" id="inputName" name="name" [(ngModel)]="user.name" class="form-control" placeholder="Name" required
+            autofocus>
+        <label for="inputName">* Name</label>
+    </div>
+
+    <div class="form-label-group">
+        <input type="email" id="inputEmail" name="email" [(ngModel)]="user.email" class="form-control" placeholder="Email address"
+            required>
+        <label for="inputEmail">* E-mail address</label>
+    </div>
+
+    <div class="form-label-group">
+        <input type="password" id="inputPassword" name="password" [(ngModel)]="password" class="form-control" placeholder="Password"
+            required>
+        <label for="inputPassword">* Password</label>
+    </div>
+
+    <div class="form-label-group">
+        <input type="password" id="inputPasswordConfirmed" name="passwordConfirmed" [(ngModel)]="passwordConfirmed" class="form-control" placeholder="Confirm Password"
+            required>
+        <label for="inputPasswordConfirmed">* Confirm Password</label>
+    </div>
+
+    <p style="font-size: 14px;"><code>*</code> These filds are mandatory</p>
+
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-lg btn-primary btn-block" type="submit">Create</button>
+        <img *ngIf="loading"
+            src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+    </div>
+    <nav style="text-align: center; padding-top: 10px;">
+        <a routerLink="/login">Login</a>
+    </nav>
+</form>
