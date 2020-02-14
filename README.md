@@ -3,7 +3,7 @@
 This is a Angular Web project with NodeJS, made to be the main application for the MSC. When configureted and running, it is the web page for interact with the MSC system. To this application run, you will have to config and run the MSC Server (https://github.com/patrickmguimaraes/msc-app).
 
 [![](https://img.shields.io/badge/IBM%20Cloud-powered-blue.svg)](https://bluemix.net)
-[![](https://img.shields.io/badge/Angular-Applicative-green)]
+![](https://img.shields.io/badge/Angular-Applicative-green)
 ![Platform](https://img.shields.io/badge/platform-NODE-lightgrey.svg?style=flat)
 
 ### Table of Contents
