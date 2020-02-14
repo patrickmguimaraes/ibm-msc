@@ -34,4 +34,4 @@ npm start
 
 ##### Endpoints
 
-Your application is running at: `http://localhost:3000/` in your browser.
+Your application is running at: `http://localhost:4200/` in your browser.
