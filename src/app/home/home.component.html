@@ -8,15 +8,18 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item" [class.active]="isActive('/')">
-          <a class="nav-link" routerLink="" routerLinkActive="active">Home</a>
+          <a class="nav-link" routerLink="" >Home</a>
         </li>
-        <li class="nav-item" [class.active]="isActive('ticket')">
-          <a class="nav-link" routerLink="tickets" routerLinkActive="active">Tickets</a>
+        <li class="nav-item" [class.active]="isActive('tickets')">
+          <a class="nav-link" routerLink="tickets" >Tickets</a>
         </li>
-        <li class="nav-item" [class.active]="isActive('account')">
-          <a class="nav-link" routerLink="account" routerLinkActive="active">Account</a>
+        <li class="nav-item" [class.active]="isActive('create-ticket')">
+          <a class="nav-link" routerLink="create-ticket" >Create Ticket</a>
         </li>
       </ul>
+      <div class="form-inline mt-2 mt-md-0" style="padding-right: 10px;">
+        <small class="text-muted">{{user.name}} ({{user.email}})</small>
+      </div>
       <div class="form-inline mt-2 mt-md-0" >
         <button class="btn btn-outline-success my-2 my-sm-0" (click)="logout()">Logout</button>
       </div>

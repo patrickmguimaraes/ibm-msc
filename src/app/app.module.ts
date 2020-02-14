@@ -22,7 +22,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AlertComponent } from 'src/_directives';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ChatComponent } from './chat/chat.component';
 
 registerLocaleData(localePt);
@@ -36,7 +35,6 @@ registerLocaleData(localePt);
     HomeComponent,
     TicketComponent,
     TicketsComponent,
-    ChangePasswordComponent,
     ChatComponent
   ],
   imports: [

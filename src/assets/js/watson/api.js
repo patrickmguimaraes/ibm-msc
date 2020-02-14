@@ -32,44 +32,45 @@ var Api = (function() {
   };
 
   function getSessionId(callback) {
+    var siteSession = JSON.parse(localStorage.getItem('ibm-msc-session'));
+
     var http = new XMLHttpRequest();
     http.open('GET', sessionEndpoint, true);
     http.setRequestHeader('Content-type', 'application/json');
+    http.setRequestHeader('Authorization', 'Bearer ' + siteSession.token);
     http.onreadystatechange = function () {
       if (http.readyState === XMLHttpRequest.DONE) {
         let res = JSON.parse(http.response);
         sessionId = res.result.session_id;
-        callback();
+        if(callback) { callback(); }
       }
     };
     http.send();
   }
 
-
   // Send a message request to the server
   function sendRequest(text) {
+    if(!localStorage.getItem('ibm-msc-session')) { return; }
+
+    var siteSession = JSON.parse(localStorage.getItem('ibm-msc-session'));
+    var id = JSON.parse(localStorage.getItem('ibm-msc-session')).id;
+
     // Build request payload
     var payloadToWatson = {
-      session_id: sessionId
+      session_id: sessionId,
+      id_user: id
     };
 
     payloadToWatson.input = {
       message_type: 'text',
       text: text,
     }; 
-
-    if(localStorage.getItem('ibm-msc-session')){
-      var id = JSON.parse(localStorage.getItem('ibm-msc-session')).id;
-  
-      payloadToWatson.user = {
-        id_user: id
-      }
-    }
-
+    
     // Built http request
     var http = new XMLHttpRequest();
     http.open('POST', messageEndpoint, true);
     http.setRequestHeader('Content-type', 'application/json');
+    http.setRequestHeader('Authorization', 'Bearer ' + siteSession.token);
     http.onreadystatechange = function() {
       if (http.readyState === XMLHttpRequest.DONE && http.status === 200 && http.responseText) {
         Api.setResponsePayload(http.responseText);

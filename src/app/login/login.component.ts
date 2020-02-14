@@ -19,7 +19,6 @@ import { fadeInOnEnterAnimation, fadeOutOnLeaveAnimation } from 'angular-animati
 export class LoginComponent implements OnInit {
   @Input() email: String = "";
   @Input() password: String = "";
-  @Input() rememberMe: Boolean = true;
   loading = false;
   returnUrl: string;
 
@@ -47,7 +46,7 @@ export class LoginComponent implements OnInit {
         //Function uses to encrypt a password usind the same password (only the user knows)
         var passwordEncrypted = CryptoJS.HmacSHA1(this.password, this.password).toString();
   
-        this.authService.login(this.email, passwordEncrypted, this.rememberMe)
+        this.authService.login(this.email, passwordEncrypted)
           .subscribe(
             user => {
               this.router.navigate([this.returnUrl]);

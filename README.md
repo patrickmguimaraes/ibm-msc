@@ -1,27 +1,37 @@
-# IbmMsc
+## IBM MSC
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.1.
+This is a Angular Web project with NodeJS, made to be the main application for the MSC. When configureted and running, it is the web page for interact with the MSC system. To this application run, you will have to config and run the MSC Server (https://github.com/patrickmguimaraes/msc-app).
 
-## Development server
+[![](https://img.shields.io/badge/IBM%20Cloud-powered-blue.svg)](https://bluemix.net)
+[![](https://img.shields.io/badge/Angular-Applicative-green)]
+![Platform](https://img.shields.io/badge/platform-NODE-lightgrey.svg?style=flat)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Table of Contents
+* [Configuration](#configuration)
+* [Run](#run)
 
-## Code scaffolding
+<a name="configuration"></a>
+### Configuration
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The project is already configureted to run on `http://localhost:4200/`
 
-## Build
+#### Using local environment
+This is a Node.js project, configureted in a development environment. The first thing you have to do is to install all the dependencies required. To do it, run:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```bash
+npm install
+```
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<a name="run"></a>
+### Run
 
-## Running end-to-end tests
+To run your application, run:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```bash
+npm start
+```
 
-## Further help
+##### Endpoints
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Your application is running at: `http://localhost:3000/` in your browser.

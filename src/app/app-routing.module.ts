@@ -8,16 +8,14 @@ import { AuthGuard } from 'src/_guards';
 import { TicketsComponent } from './tickets/tickets.component';
 import { TicketComponent } from './ticket/ticket.component';
 import { CommonModule } from '@angular/common';
-import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ChatComponent } from './chat/chat.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [AuthGuard], data: {animation: 'HomePage'},
     children: [
       { path: '', component: ChatComponent, data: {animation: 'ChatPage' }},
-      { path: 'ticket', component: TicketComponent },
-      { path: 'tickets', component: TicketsComponent },
-      { path: 'change-password', component: ChangePasswordComponent, data: {animation: 'ChangePasswordPage' }},
+      { path: 'create-ticket', component: TicketComponent, data: {animation: 'TicketPage' } },
+      { path: 'tickets', component: TicketsComponent, data: {animation: 'TicketsPage' } }
   ]},
   { path: 'login', component: LoginComponent, data: {animation: 'LoginPage'} },
   { path: 'create', component: CreateAccountComponent, data: {animation: 'CreatePage'} },

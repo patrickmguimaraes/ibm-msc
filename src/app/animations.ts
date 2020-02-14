@@ -15,7 +15,7 @@ export const transAnimation = animation([
 // Routable animations
 export const slideInAnimation =
     trigger('routeAnimations', [
-        transition('LoginPage <=> HomePage', [
+       /* transition('LoginPage <=> HomePage', [
             style({ position: 'fixed' }),
             query(':enter, :leave', [
                 style({
@@ -40,17 +40,16 @@ export const slideInAnimation =
                 ])
             ]),
             query(':enter', animateChild()),
-        ]),
+        ]),*/
         transition('LoginPage <=> CreatePage', [
             style({ position: 'fixed' }),
             query(':enter, :leave', [
                 style({
                     position: 'fixed',
-                    top: 10,
+                    top: 0,
                     left: 0,
                     right: 0,
-                    width: '100%',
-                    height: '100%'
+                    bottom: 0
                 })
             ]),
             query(':enter', [
@@ -67,32 +66,6 @@ export const slideInAnimation =
             ]),
             query(':enter', animateChild()),
         ]),
-        transition('LoginPage <=> ChatPage', [
-            style({ position: 'fixed' }),
-            query(':enter, :leave', [
-                style({
-                    position: 'fixed',
-                    top: 10,
-                    left: 0,
-                    right: 0,
-                    width: '100%',
-                    height: '100%'
-                })
-            ]),
-            query(':enter', [
-                style({ left: '-100%' })
-            ]),
-            query(':leave', animateChild()),
-            group([
-                query(':leave', [
-                    animate('900ms ease-out', style({ left: '100%' }))
-                ]),
-                query(':enter', [
-                    animate('900ms ease-out', style({ left: '0%' }))
-                ])
-            ]),
-            query(':enter', animateChild()),
-        ])
     ]);
 
 

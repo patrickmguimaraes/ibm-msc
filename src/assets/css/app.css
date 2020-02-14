@@ -371,9 +371,9 @@ html{
 @font-face {
   font-family: 'Helvetica Neue for IBM';
   src: url('../fonts/roman/h-n-roman.eot?') format('eot'),
-  url('../fonts/roman/h-n-roman.woff2') format('woff2'),
-  url('../fonts/roman/h-n-roman.woff') format('woff'),
-  url('../fonts/roman/h-n-roman.ttf') format('truetype');
+  url('../fonts/h-n-roman.woff2') format('woff2'),
+  url('../fonts/h-n-roman.woff') format('woff'),
+  url('../fonts/h-n-roman.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }

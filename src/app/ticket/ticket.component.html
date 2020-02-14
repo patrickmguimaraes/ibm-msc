@@ -1,6 +1,7 @@
-<p>ticket works!</p>
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4" style="padding-top: 20px;">New Ticket</h1>
+</div>
 
-<!-- 
 <div class="form-label-group">
     <input type="text" id="inputTicketDescription" name="ticketDescription" [(ngModel)]="ticketDescription"
         class="form-control" placeholder="Please, enter the ticket description." required autofocus>
@@ -11,11 +12,6 @@
     <button class="btn btn-lg btn-primary btn-block" type="button" (click)="createTicket()">Create Ticket</button>
 </div>
 
-<div class="form-group">
-    <button class="btn btn-lg btn-primary btn-block" type="button" (click)="getTickets()">My Tickets</button>
-</div>
-
-<li *ngFor="let ticket of tickets">
-    <span class="badge">{{ticket._id}}</span> {{ticket.description}} <a (click)="removeTicket(ticket._id)">Remove
-        Ticket</a>
-</li> --->
+<nav style="text-align: center; padding-top: 10px;">
+    <a routerLink="/tickets">My Tickets</a>
+  </nav>

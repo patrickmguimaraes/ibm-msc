@@ -27,9 +27,9 @@ var ConversationPanel = (function () {
   // Initialize the module
   function init() {
     chatUpdateSetup();
-    Api.getSessionId(function() {
-      Api.sendRequest('', null);
-    });
+    //Api.getSessionId(function() {
+    //  Api.sendRequest('', null);
+    //});
     setupInputBox();
   }
   // Set up callbacks on payload setters in Api module

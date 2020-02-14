@@ -10,11 +10,8 @@ export class ChatComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.createNewChat();
-  }
-
-  createNewChat(): void {
-    //console.log(event);
-    ConversationPanel.init();
+    Api.getSessionId(function() {
+      Api.sendRequest('', null);
+    });
   }
 }

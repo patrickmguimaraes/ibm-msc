@@ -1,20 +1,26 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4" style="padding-top: 20px;">My Tickets</h1>
+    <p class="lead">Tickets created on the Marketing Service Center.</p>
+</div>
 
-<!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
+<div class="container">
+    <div *ngFor="let item of dataSource" class="card-deck mb-3 text-center">
+        <div  class="card mb-4 shadow-sm">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">{{item.position}}</h4>
+            </div>
+            <div class="card-body">
+                {{item.description}}
+            </div>
+        </div>
 
-<!-- Position Column -->
-<ng-container matColumnDef="position">
-    <th mat-header-cell *matHeaderCellDef> No. </th>
-    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-</ng-container>
+       
+    </div>
+    <div *ngIf="dataSource?.length==0" class="mx-auto text-center">
+        <p class="lead">You don't have any ticket.</p>
+    </div>
+</div>
 
-<!-- Name Column -->
-<ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef> Name </th>
-    <td mat-cell *matCellDef="let element"> {{element.description}} </td>
-</ng-container>
-
-<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+<div class="form-group">
+    <button class="btn btn-lg btn-primary btn-block" type="button" (click)="addTicket()">Create Ticket</button>
+</div>

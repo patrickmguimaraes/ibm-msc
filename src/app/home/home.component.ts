@@ -17,25 +17,10 @@ import { slideInAnimation } from '../animations';
 })
 export class HomeComponent implements OnInit {
   @Input() user: User = this.authService.getSession().user;
-  @Input() ticketDescription: string = "";
-  @Input() tickets: Ticket[];
-
+  
   constructor(private userService: UserService, private ticketService: TicketService, private router: Router, private authService: AuthenticationService, private alertService: AlertService) { }
 
   ngOnInit(): void {
-    console.log(this.authService.getSession().user._id);
-    this.tickets = new Array();
-
-    this.userService.getById(this.authService.getSession().user._id)
-      .subscribe(
-        user => {
-          //console.log(user);
-          //User updated
-          if (user) { this.user = user; }
-        },
-        error => {
-          //this.alertService.error(error);
-        });
   }
 
   prepareRoute(outlet: RouterOutlet) {
@@ -48,64 +33,5 @@ export class HomeComponent implements OnInit {
 
   isActive(page) {
     return this.router.isActive(page, true);
-  }
-
-  createTicket() {
-    try {
-      if (this.ticketDescription == "") {
-        this.alertService.info("Please, enter a valid description.");
-      }
-      else {
-        var ticket:Ticket = new Ticket();
-        ticket.description = this.ticketDescription;
-        ticket.id_user = this.user._id;
-
-        this.ticketService.create(ticket)
-          .subscribe(data => {
-              this.alertService.success('The ticket was created successfully!', true);
-              this.ticketDescription = "";
-          },
-          error => {
-              this.alertService.error(error);
-          });
-      }
-    } catch (error) {
-      this.alertService.error("Sorry, the system couldn't process the information.");
-    }
-  }
-
-  getTickets() {
-    try {
-      var ticket:Ticket = new Ticket();
-        
-        this.ticketService.getAll(this.user._id)
-          .subscribe(tickets => {
-              this.tickets = tickets;
-          },
-          error => {
-              this.alertService.error(error);
-          });
-    } catch (error) {
-      this.alertService.error("Sorry, the system couldn't process the information.");
-    }
-  }
-
-  removeTicket(_id) {
-    try {
-      this.alertService.confirm("Remove Ticket", "Are you sure you want remove the ticket " + _id + "?").
-        then(response => { console.log(response);
-          if(response) {
-            this.ticketService.delete(_id)
-              .subscribe(tickets => {
-                this.alertService.success("The ticket was removed successfully.");
-              },
-              error => {
-                  this.alertService.error(error);
-              });
-          }
-        }).catch();
-    } catch (error) {
-      this.alertService.error("Sorry, the system couldn't process the information.");
-    }
   }
 }
