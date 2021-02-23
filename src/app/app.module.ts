@@ -15,7 +15,6 @@ import { AuthGuard } from 'src/_guards';
 import { AuthenticationService, TicketService } from 'src/_services';
 import { UserService } from 'src/_services';
 import { JwtInterceptorProvider, ErrorInterceptorProvider } from 'src/_helpers';
-import localePt from '@angular/common/locales/pt';
 import { APP_BASE_HREF } from '@angular/common';
 import { registerLocaleData } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -23,8 +22,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AlertComponent } from 'src/_directives';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChatComponent } from './chat/chat.component';
-
-registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -44,10 +41,9 @@ registerLocaleData(localePt);
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    //NgbModule.forRoot(),
+    NgbModule.forRoot(),
   ],
   providers: [
-    { provide: LOCALE_ID, useValue: 'pt-BR' },
     {provide: APP_BASE_HREF, useValue: '/'},
     AuthGuard,
     AlertService,
